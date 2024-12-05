@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue.js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
     <div id="myApp">
-
+        <h1>Hola mundo</h1>
+        <p>Con Vue.js</p>
+        <p>{{1+2}}</p>
+        <p>{{[1,2,3,4,5,6,7]}}</p>
+        <p>{{ {nombre: 'Cristina', apellido:'Rivera'} }}</p>
+        <p>{{false? 'Activo':'Inactivo'}}</p>
+        <p>1===1</p>
+        <p>{{1===1}}</p>
+        <p>El mensaje es: {{mensaje}}</p>
+        <p>La edad es: {{edad!==26}}</p>
+        <p>Es igual a 22: {{edad===22}}</p>
+        <button v-on:click="cambiarMensaje">Cambiar</button>
     </div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    {{1+2}}
     <script src="./js/app.js"></script>
 </body>
+
 </html>
