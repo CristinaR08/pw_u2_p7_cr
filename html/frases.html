@@ -26,15 +26,19 @@
             </li>
         </ul>
         <hr>
-        <label for="frase">Frase: </label>
-        <input type="text" id="frase">
+        <label for="idFrase">Frase: </label>
+        <input v-model="frase" type="text" id="idFrase">
+        <p>{{frase}}</p>
         <label for="autor">Autor: </label>
-        <input type="text" id="autor">
-        <button>Agregar frase: </button>
+        <!-- <input v-on:keypress="eventoKeyPress" v-model="autor" type="text" id="autor"> -->
+        <input v-on:keypress.enter="eventoKeyPressModificador" v-model="autor" type="text" id="autor">
+        <p>{{frase}}</p>
+        <button v-on:click="agregarFrase">Agregar frase al inicio </button>
+        <button v-on:click="agregarFraseFin">Agregar frase al final </button>
         <ul>
             <li v-for = "{frase, autor} in listaFrases">{{frase}} - {{autor}}
-                <button>{{autor}}</button>
-                <p>{{frase}}</p>
+                <button v-if="autor!==null">{{autor}}</button>
+                <p v-show="autor!==null">Autor: {{autor}}</p>
             </li>
         </ul>
     </div>
