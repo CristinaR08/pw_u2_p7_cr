@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="myApp">
+        <div>
+            <label for="nombre">Nombre: </label>
+            <input v-model="nombre" type="text" id="nombre">
+            <br><br>
+            <label for="apellido">Apellido: </label>
+            <input v-model="apellido" type="text" id="apellido">
+            <br><br>
+            <label for="hobby">Hobby: </label>
+            <input v-model="hobby" type="text" id="hobby">
+            <br><br>
+            <label for="lugar">Lugar de Nacimiento: </label>
+            <input v-model="lugar" type="text" id="lugar">
+        </div>
+        <div>
+            <br>
+            <button @click="agregarDatos">Agregar</button>
+            <br>
+        </div>
+        <div class="listaDatos">
+            <h2>Listado</h2>
+            <ul>
+                <li v-for="dato in datos" :key="dato.nombre">
+                    {{ dato.nombre }} {{ dato.apellido }} - Hobby: {{ dato.hobby }} - Lugar: {{ dato.lugar }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="../js/appFormulario.js"></script>
+</body>
+
+</html>
